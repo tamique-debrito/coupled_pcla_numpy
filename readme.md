@@ -1,5 +1,5 @@
 # Summary
-This is a python implementation of the coupled Probabilistic Component Analysis (PLCA) for super-resolution spectrograms.  
+This is a python implementation (using numpy and scipy) of the coupled Probabilistic Component Analysis (PLCA) for super-resolution spectrograms.  
 Coupled PCLA is introduced the paper https://ccrma.stanford.edu/~juhan/pubs/jnam-interspeech10.pdf
 
 ## Some notes:
