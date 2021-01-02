@@ -1,16 +1,17 @@
 # Summary
-This is a python implementation of the coupled Probabilistic Component Analysis (PLCA) for super-resolution spectrograms.
+This is a python implementation of the coupled Probabilistic Component Analysis (PLCA) for super-resolution spectrograms.  
 Coupled PCLA is introduced the paper https://ccrma.stanford.edu/~juhan/pubs/jnam-interspeech10.pdf
 
-## Brief documentation notes:
+## Some notes:
 
-
-for STFT parameters, usual argument order is: window_size, fft_size, stride
-for probabilistic variables, the usual argument order is time-related before frequency related
-the variables are named as pA_B_C
+For STFT parameters, usual argument order is: window_size, fft_size, stride.  
+For probabilistic variables, the usual argument order is time-related before frequency-related  
+For PCLA, the variables are named as pA_B_C  
 where A in ['t', 'f'] describes which of the high-temporal-res or high-spectral-res cases it belongs to;
 B and C represent the conditioning of the probability (i.e. B|C).
-### A complete list of probabilities modelled:
+
+
+### The probabilities modelled (assuming a joint distribution between spectrogram entries and latent vectors):
 
 pt_z = PT(z)  
 pt_t_z = PT(t|z)  
