@@ -5,8 +5,8 @@ Coupled PCLA is introduced the paper https://ccrma.stanford.edu/~juhan/pubs/jnam
 ## Some notes:
 
 For STFT parameters, usual argument order is: window_size, fft_size, stride.  
-For probabilistic variables, the usual argument order is time-related before frequency-related  
-For PCLA, the variables are named as pA_B_C  
+For probabilistic variables, the usual argument order is time-related before frequency-related  .
+For PCLA, the variables are named in format pA_B_C,
 where A in ['t', 'f'] describes which of the high-temporal-res or high-spectral-res cases it belongs to;
 B and C represent the conditioning of the probability (i.e. B|C).
 
@@ -22,8 +22,8 @@ pf_f_z = PF(f|z)
 pf_z_ft = PF(z|f,t)  
 
 (PT represents the distribution associated with the high-temporal-resolution spectrogram
-and PF is the distribution associated with the high-spectral-resolution spectrogram)
+and PF is the distribution associated with the high-spectral-resolution spectrogram).
 
-Note that PT(f|z) and PF(t|z) are not explicitly modelled, as it is assumed
-(per the idea of coupling)
+Note that PT(f|z) and PF(t|z) are not explicitly modelled,
+as it is assumed (per the idea of coupling)
 that PT(f|z) can be reconstructed by blurring PF(f|z) and similarly for PF(t|z).
