@@ -1,14 +1,19 @@
 import numpy as np
 
-def construct_superres_spectrogram(pf_z, pt_z, pf_fz, pt_tz):
-    p_z = (pf_z + pt_z) / 2.0  # Using either would be fine, but just average to make implementation nicer (because of symmetry)
+def construct_superres_spectrogram(pt_z, pt_t_z, pf_z, pf_f_z, show_progress):
+    if show_progress:
+        print("\rConstructing superresolution spectrogram", end='')
+    p_z = (pt_z + pf_z) / 2.0  # Using either would be fine, but just average to make implementation nicer (because of symmetry)
 
-    p_z = np.expand_dims(p_z, axis=)
-    pf_fz = np.expand_dims(p_f_fz, axis=)
-    pt_tz = np.expand_dims(pt_tz, axis=)
+    p_z = np.expand_dims(p_z, axis=(1, 2))
+    pt_t_z = np.expand_dims(pt_t_z, axis=2)
+    pf_f_z = np.expand_dims(pf_f_z, axis=1)
 
-    combined = p_z * pf_fz * pt_tz
+    combined = p_z * pt_t_z * pf_f_z
 
-    superres = np.sum(combined, axis=)
+    superres = np.sum(combined, axis=0)
+
+    if show_progress:
+        print("\rDone constructing superresolution spectrogram")
 
     return superres
